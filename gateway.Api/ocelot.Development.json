@@ -1,0 +1,31 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/heroes",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 3000
+                }
+            ],
+            "UpstreamPathTemplate": "/api/heroes",
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            },
+            "RateLimitOptions": {
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "5s",
+                "PeriodTimespan": 1,
+                "Limit": 1
+            },
+            "FileCacheOptions": { "TtlSeconds": 30, "Region": "somename" }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5021"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/heroes",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 3000
+                }
+            ],
+            "UpstreamPathTemplate": "/api/heroes",
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5021"
+    }
+}
